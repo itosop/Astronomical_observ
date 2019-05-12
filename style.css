@@ -1,4 +1,4 @@
-a.btn {
+.btn {
 	display: block;
 	width: 160px;
 	padding: 0.8em;
@@ -9,7 +9,7 @@ a.btn {
 	border-radius: 3px;
 	transition: .4s;
 }
-a.btn:hover {
+.btn:hover {
 	background: #EC407A;
 	color: #fff;
 }
