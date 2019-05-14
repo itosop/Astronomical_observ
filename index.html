@@ -3,8 +3,23 @@
   <head>
     <title>星座早見盤の自動回転</title>
     <meta charset="utf-8" />
-    <script>
-      function compass_rotate(x){
+    <script language="javascript" type="text/javascript">
+      function input_img(){
+	var data = createImageData(document.getElementById('in_img'));
+	document.getElementById('test_canvas').getContext('2d').putImageData(data, 0, 0);
+      }
+
+      function createImageData(img) {
+	var cv = document.createElement('canvas');
+	cv.width = img.naturalWidth;
+	cv.height = img.naturalHeight;
+	var ct = cv.getContext('2d');
+	ct.drawImage(img, 0, 0);
+	var data = ct.getImageData(0, 0, cv.width, cv.height);
+	return data;
+      }
+
+      function image_rotate(x){
 	var image = document.getElementById("img1");
 	image.style.transform = "rotate("+ x + "deg)";
       }
@@ -107,7 +122,9 @@
             }
 	  }
 	}
-	return filename;
+	document.write(filename);
+	var filename1 = 'star0518_0000.png';
+	return filename1;
       }
     </script>
   </head>
@@ -116,8 +133,11 @@
     <!-- <style> -->
     <h1>星座の早見盤を自動で回転させます．</h1>
       <img src="select_img()" id="in_img">
-      <button type="button" class="btn">button</button>
+      <button type="button" class="btn" onclick="input_img()">button</button>
     <!-- </style> -->
     <link rel="stylesheet" href="style.css">
+    <p>
+	<canvas id="test_canvas" width=1000 height=1000 style="border: 1px solid;"></canvas>
+    </p>
   </body>
 </html>
