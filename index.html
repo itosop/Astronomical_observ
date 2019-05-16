@@ -4,22 +4,6 @@
     <title>星座早見盤の自動回転</title>
     <meta charset="utf-8" />
     <script language="javascript" type="text/javascript">
-<!--
-      function input_img(){
-	var data = createImageData(document.getElementById('in_img'));
-	document.getElementById('test_canvas').getContext('2d').putImageData(data, 0, 0);
-      }
-
-      function createImageData(img) {
-	var cv = document.createElement('canvas');
-	cv.width = img.naturalWidth;
-	cv.height = img.naturalHeight;
-	var ct = cv.getContext('2d');
-	ct.drawImage(img, 0, 0);
-	var data = ct.getImageData(0, 0, cv.width, cv.height);
-	return data;
-      }
--->
       function input_img(){
 	var data = document.getElementById("in_img");
 	data.onload = function() {
@@ -40,7 +24,7 @@
         }
         else{
           document.getElementById("result").innerHTML = "Geo Location APIに対応していません";
-        }
+        }        
       }
 
       function image_rotate(x){
