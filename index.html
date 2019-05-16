@@ -25,6 +25,22 @@
 	data.onload = function() {
 	}
 	data.src = select_img();
+        compass();
+      }
+
+      function compass(){
+        if (navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(
+            function(position){
+              var hd = position.coords.heading || "方角には未対応です";
+              var txt = "方角："+hd;
+              document.getElementById("result").innerHTML = txt;
+            }
+          );
+        }
+        else{
+          document.getElementById("result").innerHTML = "Geo Location APIに対応していません";
+        }
       }
 
       function image_rotate(x){
