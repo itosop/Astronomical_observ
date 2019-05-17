@@ -11,8 +11,11 @@
         var keido = argPos.coords.longitude;
         var rotate_n = 135 - Math.floor(keido);
         if(rotate_n < 0){
-         rotate_n = rotate_n + 360;
-        }
+          rotate_n = rotate_n * (-1);
+	}
+        else{
+	  rotate_n = 360 - rotate_n;
+	}	      
         var output_img = document.getElementById("in_img");
 	output_img.style.transform = "rotate("+ rotate_n + "deg)";
       }
