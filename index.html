@@ -7,6 +7,11 @@
       function cmanGetOk(argPos){
         document.getElementById("getLatitude").innerHTML = argPos.coords.latitude;
         document.getElementById("getLongitude").innerHTML = argPos.coords.longitude;
+        var ido = argPos.coords.latitude;
+        var keido = argPos.coords.longitude;
+        var rotate_n = 135 - Math.floor(keido);
+        var image = document.getElementById("in_img");
+	image.style.transform = "rotate("+ rotate_n + deg")";      
       }
 
       function cmanGetErr(argErr){
@@ -44,7 +49,7 @@
       }
 
       function image_rotate(x){
-	var image = document.getElementById("img1");
+	var image = document.getElementById("in_img");
 	image.style.transform = "rotate("+ x + "deg)";
       }
 
@@ -162,7 +167,9 @@
       <button type="button" class="btn" onclick="input_img()">button</button>
     <!-- </style> -->
     <link rel="stylesheet" href="style.css">
+    <p>(緯度)</p>
     <p id="getLatitude"></p>
+    <p>(経度)</p>
     <p id="getLongitude"></p>
     <p>
 	<img id="in_img">
