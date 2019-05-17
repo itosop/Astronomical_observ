@@ -10,8 +10,8 @@
         var ido = argPos.coords.latitude;
         var keido = argPos.coords.longitude;
         var rotate_n = 135 - Math.floor(keido);
-        var image = document.getElementById("in_img");
-	     
+        var output_img = document.getElementById("in_img");
+	output_img.style.transform = "rotate("+ x + "deg)";
       }
 
       function cmanGetErr(argErr){
