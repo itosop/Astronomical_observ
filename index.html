@@ -54,11 +54,6 @@
         var flag = cmanPosGet();
       }
 
-      function image_rotate(x){
-	var image = document.getElementById("in_img");
-	image.style.transform = "rotate("+ x + "deg)";
-      }
-
       function select_img(){
 	var hiduke = new Date();
 	var month = hiduke.getMonth()+1;
@@ -114,6 +109,7 @@
 	  }
 	}
 	else {
+	  var tmpname = 'RotateImg/' + 'star' + month;
 	  if (day < 10) {
             tmpname = tmpname + '0' + day + '_';
             if (hour < 10) {
@@ -157,8 +153,7 @@
             }
 	  }
 	}
-	var filename1 = 'RotateImg/star0518_0000.png';
-	return filename1;
+	return filename;
       }
     </script>
   </head>
@@ -173,9 +168,9 @@
       <button type="button" class="btn" onclick="input_img()">button</button>
     <!-- </style> -->
     <link rel="stylesheet" href="style.css">
-    <p>(緯度)</p>
+    <p>(現在の緯度)</p>
     <p id="getLatitude"></p>
-    <p>(経度)</p>
+    <p>(現在の経度)</p>
     <p id="getLongitude"></p>
     <p>
 	<img id="in_img">
