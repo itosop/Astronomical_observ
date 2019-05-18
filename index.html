@@ -61,7 +61,7 @@
 	var hour = hiduke.getHours();
 	var minute = hiduke.getMinutes();
 	var minute_tmp = minute / 10;
-	minute = minute_tmp * 10;
+	minute = Math.floor(minute_tmp) * 10;
 
 	if (month < 10) {
 	  var tmpname = 'RotateImg/' + 'star' + 0 + month;
